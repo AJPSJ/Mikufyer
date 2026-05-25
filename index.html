@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MIKUFY YOUR IMAGES!!!!!!! NOW!!!!!!!!">
+    <title>✿ HATSUNE MIKUFYER ✿</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ★ SIDE-SCROLLING WALLPAPER BACKGROUND ★ -->
+    <div id="wallpaper-bg">
+        <div id="wallpaper-strip"></div>
+    </div>
+
+    <!-- ★ MIKUDAYO JUMPSCARE OVERLAY ★ -->
+    <div id="jumpscare-overlay" class="jumpscare-overlay hidden">
+        <img src="src/mikus/mikudayo.png" alt="MIKUDAYO" id="jumpscare-img">
+    </div>
+
+    <!-- ★ RAINBOW CURSOR TRAIL CANVAS ★ -->
+    <canvas id="cursor-canvas"></canvas>
+
+    <!-- ★ LEEK CONTAINER (falling leeks land here) ★ -->
+    <div id="leek-container"></div>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- HEADER -->
+    <!-- ════════════════════════════════════════════ -->
+    <header id="site-header">
+        <div class="header-stars">★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★</div>
+        <h1 id="main-title">MIKUFY!!!!</h1>
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            ♪ ♫ ♬ WELCOME TO THE MIKU ZONE ♬ ♫ ♪ ～ YOU WILL BE MIKUFIED ～ ♪ ♫ ♬ AND IT WILL RAIN LEEKS ♬ ♫ ♪
+        </marquee>
+        <div class="header-stars">★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★</div>
+    </header>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- MAIN CONTENT -->
+    <!-- ════════════════════════════════════════════ -->
+    <main id="main-content">
+
+        <!-- TOP ROW: Leek + Miku PNG | Mikufication Area -->
+        <section id="top-section" class="content-row">
+
+            <!-- LEFT: Miku PNG + Leek -->
+            <div id="miku-leek-area" class="panel">
+                <div id="leek-button-area">
+                    <img src="src/mikus/portraits/mikuv2.png" alt="A leek" id="leek-img" class="leek-img"
+                        title="CLICK ME!!">
+                    <button id="clear-leeks-btn" type="button">CLEAR LEEKS</button>
+                </div>
+                <div id="miku-png-area">
+                    <img src="src/mikus/portraits/mikuv6.png" alt="Hatsune Miku" id="miku-main-png"
+                        class="miku-clickable" title="Click me~!">
+                </div>
+            </div>
+
+            <!-- RIGHT: Mikufication Zone -->
+            <div id="mikufy-area" class="panel">
+                <h2 class="section-title rainbow-text">✦ MIKUFY YOUR IMAGE ✦</h2>
+                <div id="upload-controls">
+                    <label for="image-upload" id="upload-label" class="btn-retro">Upload Image</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                </div>
+                <div id="mikufy-canvas-wrapper">
+                    <canvas id="mikufy-canvas"></canvas>
+                    <p id="canvas-placeholder">↑ Upload an image to MIKUFY it!! ↑</p>
+                </div>
+                <div id="miku-portraits-row">
+                    <img src="src/mikus/portraits/mikunt.png" alt="Miku NT" class="miku-portrait-icon" data-index="0" title="Add Miku NT!">
+                    <img src="src/mikus/portraits/mikuv2.png" alt="Miku V2" class="miku-portrait-icon" data-index="1" title="Add Miku V2!">
+                    <img src="src/mikus/portraits/mikuv3.png" alt="Miku V3" class="miku-portrait-icon" data-index="2" title="Add Miku V3!">
+                    <img src="src/mikus/portraits/mikuv4.png" alt="Miku V4" class="miku-portrait-icon" data-index="3" title="Add Miku V4!">
+                    <img src="src/mikus/portraits/mikuv6.png" alt="Miku V6" class="miku-portrait-icon" data-index="4" title="Add Miku V6!">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- BOTTOM ROW: Music Player | Spotify Embed -->
+        <section id="bottom-section" class="content-row">
+
+            <!-- LEFT: Background Music Player -->
+            <div id="music-player-area" class="panel">
+                <h2 class="section-title">♪ NOW PLAYING ♪</h2>
+                <div id="player-box">
+                    <p id="track-name">LamazeP - Triple Baka</p>
+                    <div id="progress-bar-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                    <div id="player-controls">
+                        <button id="play-pause-btn" type="button" title="Play/Pause">▶</button>
+                        <div id="volume-control">
+                            <span id="volume-icon" title="Mute/Unmute">🔊</span>
+                            <input type="range" id="volume-slider" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Spotify Embed -->
+            <div id="spotify-area" class="panel">
+                <h2 class="section-title">Look at my spotify playlist</h2>
+                <div id="spotify-embed-container">
+                    <iframe id="spotify-iframe" style="border: 0;"
+                        src="https://open.spotify.com/embed/playlist/5ZBJFx4PAfb5zQJsVAg4Vz?utm_source=generator&theme=0"
+                        width="100%" height="352"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy" title="Voca-Personal Spotify Playlist"></iframe>
+                </div>
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ════════════════════════════════════════════ -->
+    <footer id="site-footer">
+        <div class="footer-stars">★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★</div>
+        <h2 class="section-title">Credits</h2>
+        <div id="credits-container">
+            <div class="credit-column">
+                <h3>Art</h3>
+                <ul>
+                    <li>yunomi_imonuy (Twitter)</li>
+                    <li>はるよ (Pixiv)</li>
+                    <li>ヤマコ (Pixiv)</li>
+                    <li>三輪士郎 (Pixiv)</li>
+                    <li>八三 (Pixiv)</li>
+                    <li>砂吹 (Pixiv)</li>
+                </ul>
+            </div>
+            <div class="credit-column">
+                <h3>Music</h3>
+                <ul>
+                    <li>LamazeP - Triple Baka</li>
+                    <li>electron - MikuXP</li>
+                </ul>
+            </div>
+            <div class="credit-column">
+                <h3>Vocaloid</h3>
+                <ul>
+                    <li>Hatsune Miku © Crypton Future Media, Inc.</li>
+                    <li>Character designed by KEI</li>
+                </ul>
+            </div>
+        </div>
+        <p id="footer-disclaimer">This is a fan page by Lexel. All rights belong to their respective owners. ♡</p>
+        <div class="footer-stars">★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★</div>
+    </footer>
+
+    <!-- Hidden audio elements -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="src/audio/LamazeP - Triple Baka.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="miku-xp-sfx" preload="auto">
+        <source src="src/audio/electron - MikuXP.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="mikudayo-sfx" preload="auto">
+        <source src="src/audio/mikudayo.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
